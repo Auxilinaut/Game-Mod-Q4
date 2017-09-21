@@ -1,0 +1,8 @@
+.vs/
+Backup/
+UpgradeLog.htm
+*.vcxproj
+*.vcxproj.filters
+ipch/
+*.opendb
+*.db
