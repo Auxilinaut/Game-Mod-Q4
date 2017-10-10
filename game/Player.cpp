@@ -80,7 +80,7 @@ const int	RAGDOLL_DEATH_TIME	= 3000;
 const int	STEPUP_TIME			= 200;
 const int	MAX_INVENTORY_ITEMS = 20;
 
-const int	ARENA_POWERUP_MASK = ( 1 << POWERUP_AMMOREGEN ) | ( 1 << POWERUP_GUARD ) | ( 1 << POWERUP_DOUBLER ) | ( 1 << POWERUP_SCOUT );
+const int	ARENA_POWERUP_MASK = (1 << POWERUP_PEPPERONI) | (1 << POWERUP_BACON) | (1 << POWERUP_SAUSAGE) | ( 1 << POWERUP_AMMOREGEN ) | ( 1 << POWERUP_GUARD ) | ( 1 << POWERUP_DOUBLER ) | ( 1 << POWERUP_SCOUT );
 
 //const idEventDef EV_Player_HideDatabaseEntry ( "<hidedatabaseentry>", NULL );
 const idEventDef EV_Player_ZoomIn ( "<zoomin>" );

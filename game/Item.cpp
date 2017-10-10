@@ -1146,11 +1146,15 @@ bool idItemPowerup::GiveToPlayer( idPlayer *player ) {
 		return false;
 	}
 
-	// only one arena CTF powerup at a time
+	/*// only one arena CTF powerup at a time
 	if ( type >= POWERUP_AMMOREGEN && type <= POWERUP_SCOUT ) {
 		if ( ( player->inventory.powerups & ARENA_POWERUP_MASK ) != 0 ) {
 			return false;
 		} 
+	}*/
+
+	if ((player->inventory.powerups & ARENA_POWERUP_MASK) != 0) {
+		return false;
 	}
 
 	// in flavours of arena CTF (or are idItemPowerups only used in Arena? or even, are idItemPowerups MP only?), 
