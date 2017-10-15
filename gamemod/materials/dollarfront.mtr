@@ -1,0 +1,5 @@
+textures/pizza/dollarfront
+{
+	qer_editorimage	textures/pizza/dollarfront_ed.tga
+	diffusemap	textures/pizza/dollarfront_d.tga
+}

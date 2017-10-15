@@ -1,0 +1,5 @@
+textures/pizza/mdcr
+{
+	qer_editorimage	textures/pizza/mdcr_ed.tga
+	diffusemap	textures/pizza/mdcr_d.tga
+}

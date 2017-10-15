@@ -65,7 +65,7 @@ entityDef weapon_blaster
 	"spawnclass"				"idItem"
 	"weaponclass"				"rvWeaponBlaster"
 	"weaponname"				"Blaster"
-	"size"						"320 320 320"
+	"size"						"32 32 32"
 
   	"model_view"				"weapon_blaster_view"
   	"model_view_strogg"			"weapon_blaster_view_strogg"
@@ -82,10 +82,10 @@ entityDef weapon_blaster
 	"chargeDelay"				".1"
 	"chargeGlow"				"0 .4"
 	"fireRate"					".15"
-	"spread"					".2"
+	"spread"					"0" //was .2
 
-//	"def_projectile"			"projectile_blaster"
-	"def_hitscan"				"hitscan_blaster"
+	"def_projectile"			"projectile_blaster"
+//	"def_hitscan"				"hitscan_blaster"
 	"def_altprojectile"			"projectile_blaster_charged"
 	"ammoType"					"ammo_blaster"
 	"clipSize"					"0"
@@ -256,10 +256,11 @@ entityDef projectile_blaster
 	"maxs"						"2 2 2"
 	"cone"						"2"
 	"noshadows"					"1"
-																
+
+	"model"						"models/weapons/blaster/slice.ASE" //was excluded															
 	"def_damage"				"damage_blaster"
 								
-	"velocity"					"1500 0 0"
+	"velocity"					"1000 0 0" //was 1500 0 0
 	"fuse"						"4"
 	"push"						"7500"
 								
@@ -273,7 +274,7 @@ entityDef projectile_blaster
 	"decal_bounce"				""
 	"decal_size"				"8"
 								
-	"fx_fly"					"effects/weapons/blaster/fly.fx"
+	//"fx_fly"					"effects/weapons/blaster/fly.fx"
 	"fx_impact"					"effects/weapons/blaster/impact_default.fx"
 	"fx_impact_water"			"effects/ambient/splash_smll.fx"
 	"fx_impact_flesh"			"effects/weapons/blaster/impact_flesh.fx"
@@ -294,14 +295,14 @@ entityDef projectile_blaster_charged
 
 	"velocity"					"2000 0 0"
 
-	"fx_fly"					"effects/weapons/blaster/charged/fly.fx"
+	//"fx_fly"					"effects/weapons/blaster/charged/fly.fx"
 	"fx_impact"					"effects/weapons/blaster/charged/impact_default.fx"
 	"fx_impact_flesh"			"effects/weapons/blaster/impact_flesh_charged.fx"
 	"fx_impact_monstermetal"	"effects/weapons/blaster/impact_monstermetal_charged.fx"
 	"fx_impact_electronics"		"effects/weapons/machinegun/impact_electronics.fx"
 	"fx_impact_armor"			"effects/weapons/machinegun/impact_armor.fx"
 
-
+	"model"						"models/weapons/blaster/slice.ASE" //was excluded	
 	"def_damage"				"damage_blaster_charged"
 	"def_splash_damage"			"damage_blastersplash_charged"
 }

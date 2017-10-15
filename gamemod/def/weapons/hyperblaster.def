@@ -311,12 +311,14 @@ entityDef projectile_hyperblaster
 	"cone"						"2"
 	"clipmask_largeshot"		"0"
 	"def_damage"				"damage_hyperblaster"
+
+	"model"				"models/weapons/hyperblaster/dollar.ASE" //was excluded
 	
-	"speed"						"1800"
-	"orient_towards_motion"		"1"
+	"speed"						"100" //was 1800
+	"orient_towards_motion"		"0" //was 1
 
 	"fx_impact"			"effects/weapons/hyperblaster/impact_default.fx"
-	"fx_fly"			"effects/weapons/hyperblaster/fly.fx"
+	//"fx_fly"			"effects/weapons/hyperblaster/fly.fx"
 	"fx_impact_concrete"		"effects/weapons/hyperblaster/impact_concrete.fx"
 	"fx_impact_rock"		"effects/weapons/hyperblaster/impact_concrete.fx"
 	"fx_impact_glass"		"effects/weapons/hyperblaster/impact_glass.fx"					

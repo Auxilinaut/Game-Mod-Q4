@@ -1,0 +1,6 @@
+textures/pizza/cutter
+{
+	metal
+	qer_editorimage	textures/pizza/cutter_ed.tga
+	diffusemap	textures/pizza/cutter_d.tga
+}

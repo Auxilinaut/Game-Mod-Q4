@@ -692,8 +692,8 @@ entityDef player_marine
 	// default weapons
 	// seperate multiple weapons with commas (no spaces).
 	// NOTE: default ammo must be specified explicitly.
-	"weapon"						"weapon_blaster,weapon_napalmgun"
-	"current_weapon"					"10"
+	"weapon"						"weapon_blaster,weapon_hyperblaster,weapon_grenadelauncher,weapon_rocketlauncher,weapon_napalmgun"
+	"current_weapon"					"0"
 
 	"pm_jumpheight"						"32" //was 48
 	"pm_stepsize"						"16"
@@ -734,10 +734,10 @@ entityDef player_marine
 	"ammo_nailgun"						"0"
 	"ammo_blaster"						"-1"
 	"ammo_shotgun"						"0"
-	"ammo_hyperblaster"					"0"
-	"ammo_napalmgun"					"400" // was 0
-	"ammo_rocketlauncher"					"0"
-	"ammo_grenadelauncher"					"0"
+	"ammo_hyperblaster"					"4000" //was 0
+	"ammo_napalmgun"					"400" //was 0
+	"ammo_rocketlauncher"					"400" //was 0
+	"ammo_grenadelauncher"					"400" //was 0
 	"ammo_lightninggun"					"0"
 	"ammo_none"						"-1"
 
@@ -746,10 +746,10 @@ entityDef player_marine
 	"max_ammo_machinegun"					"300"
 	"max_ammo_nailgun"					"300"
 	"max_ammo_shotgun"					"50"
-	"max_ammo_hyperblaster"					"400"
+	"max_ammo_hyperblaster"					"4000" //was 400
 	"max_ammo_napalmgun"					"400" //was 40
-	"max_ammo_rocketlauncher"				"40"
-	"max_ammo_grenadelauncher"				"50"
+	"max_ammo_rocketlauncher"				"400" //was 40
+	"max_ammo_grenadelauncher"				"400" //was 50
 	"max_ammo_lightninggun"					"400"
 	"max_ammo_dmg"						"25"
 	"max_ammo_none"						"-1"

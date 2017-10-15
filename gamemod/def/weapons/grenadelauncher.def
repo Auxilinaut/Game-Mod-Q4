@@ -240,11 +240,11 @@ entityDef projectile_grenade
 	
 	"no_contents"				"0"
 								
-	"model"						"models/weapons/grenadelauncher/w_grenade.lwo"
+	"model"						"models/weapons/grenadelauncher/codered.ASE" //was w_grenade.lwo
 	"def_damage"				"damage_grenadeDirect"
 	"def_splash_damage"			"damage_grenadeSplash"
 																											
-	"speed"						"700"
+	"speed"						"450" //was 700
 	"angular_velocity"			"-10 5 1"
 	"settle_duration"			"0.08"
 	
@@ -336,5 +336,5 @@ entityDef damage_grenadeSplash_mp
 {
 	"inherit"					"damage_grenadeSplash"
 	"damage"					"100"
-	"radius"					"150"
+	"radius"					"15" //was 150
 }

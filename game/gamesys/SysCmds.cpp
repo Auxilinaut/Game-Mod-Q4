@@ -477,10 +477,6 @@ void GiveStuffToPlayer( idPlayer* player, const char* name, const char* value )
 		}
 	}
 
-	if (idStr::Icmp(name, "pepperoni") == 0) {
-		player->GivePowerUp(POWERUP_PEPPERONI, -1);
-	}
-
 // RAVEN BEGIN
 	if (idStr::Icmp(name, "quad") == 0) {
 		player->GivePowerUp( POWERUP_QUADDAMAGE, SEC2MS( 30.0f ) );

@@ -80,7 +80,7 @@ const int	RAGDOLL_DEATH_TIME	= 3000;
 const int	STEPUP_TIME			= 200;
 const int	MAX_INVENTORY_ITEMS = 20;
 
-const int	ARENA_POWERUP_MASK = (1 << POWERUP_PEPPERONI) | (1 << POWERUP_BACON) | (1 << POWERUP_SAUSAGE) | ( 1 << POWERUP_AMMOREGEN ) | ( 1 << POWERUP_GUARD ) | ( 1 << POWERUP_DOUBLER ) | ( 1 << POWERUP_SCOUT );
+const int	ARENA_POWERUP_MASK = ( 1 << POWERUP_AMMOREGEN ) | ( 1 << POWERUP_GUARD ) | ( 1 << POWERUP_DOUBLER ) | ( 1 << POWERUP_SCOUT );
 
 //const idEventDef EV_Player_HideDatabaseEntry ( "<hidedatabaseentry>", NULL );
 const idEventDef EV_Player_ZoomIn ( "<zoomin>" );
@@ -4522,32 +4522,7 @@ void idPlayer::StartPowerUpEffect( int powerup ) {
 			arenaEffect = PlayEffect( "fx_doubler", renderEntity.origin, renderEntity.axis, true );
 			break;
 		}
-
-		//CUSTOM POWERUPS
-
-		case POWERUP_ANCHOVIES: {
-			powerUpOverlay = invisibilityOverlay;
-
-			powerUpSkin = declManager->FindSkin(spawnArgs.GetString("skin_invisibility"), false);
-			break;
-		}
-
-		case POWERUP_SAUSAGE: {
-			powerUpOverlay = hasteOverlay;
-
-			hasteEffect = PlayEffect("fx_haste", GetPhysics()->GetOrigin(), GetPhysics()->GetAxis(), true);
-			break;
-		}
-
-		case POWERUP_PEPPERONI: {
-			assert(health > 0);
-			if (arenaEffect != NULL) {
-				// don't accumulate. clear whatever was there
-				arenaEffect->Stop(true);
-			}
-			arenaEffect = PlayEffect("fx_doubler", renderEntity.origin, renderEntity.axis, true);
-			break;
-		}
+		
 	}
 }
 
@@ -4771,26 +4746,6 @@ bool idPlayer::GivePowerUp( int powerup, int time, bool team ) {
 		}
 //RITUAL END
 
-		case POWERUP_ANCHOVIES: {
-			if (playClientEffects && this == gameLocal.GetLocalPlayer()) {
-				
-			}
-			break;
-		}
-
-		case POWERUP_SAUSAGE: {
-			if (playClientEffects && this == gameLocal.GetLocalPlayer()) {
-				
-			}
-			break;
-		}
-
-		case POWERUP_PEPPERONI: {
-			if (playClientEffects && this == gameLocal.GetLocalPlayer()) {
-				
-			}
-			break;
-		}
 	}
 
 	// only start effects if in our instances and snapshot
