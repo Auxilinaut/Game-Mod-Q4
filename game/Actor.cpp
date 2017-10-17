@@ -2415,9 +2415,9 @@ void idActor::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &dir
 				Pain( inflictor, attacker, damage, dir, location );
 			}
 			
-			//reduce the damage
-			damage = 0;
-			noDmgFeedback = true;
+			//need to use damage for feedback
+			//damage = 0;
+			//noDmgFeedback = true;
 		}		
 
 		// reduce friendly fire damage by the teamscale
@@ -2487,6 +2487,9 @@ void idActor::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &dir
 	if ( damage > 0 ) {
 		int oldHealth = health;
 		AdjustHealthByDamage ( damage );
+		
+		fl.isDormant = true;
+
 		if ( health <= 0 ) {
 
 			//allow for quick burning
@@ -2670,7 +2673,7 @@ bool idActor::Pain( idEntity *inflictor, idEntity *attacker, int damage, const i
 */
 
 	// don't play pain sounds more than necessary
-	pain_debounce_time = gameLocal.time + pain_delay;
+	pain_debounce_time = gameLocal.time;// +pain_delay;
 
 	float f;
 // RAVEN BEGIN
@@ -2693,6 +2696,7 @@ bool idActor::Pain( idEntity *inflictor, idEntity *attacker, int damage, const i
 		} else {
 			StartSound( "snd_pain_small", SND_CHANNEL_VOICE, 0, false, NULL );
 		}
+		
 	}
 
 	if ( disablePain || ( gameLocal.time < painTime ) ) {

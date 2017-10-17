@@ -7601,6 +7601,17 @@ void idPlayer::BobCycle( const idVec3 &pushVelocity ) {
 	float		speed;
 	float		f;
 
+	//this mod lets the player eat pizza while crouching
+	if (physicsObj.IsCrouching()) {
+		if (!eating) {
+			health += 10;
+			if (health > 100) health = 100;
+			eating = true;
+		}
+	}
+	else {
+		eating = false;
+	}
 
 	//
 	// calculate speed and cycle to be used for

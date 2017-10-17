@@ -504,7 +504,7 @@ idEntity::idEntity() {
 	numPVSAreas		= -1;
 
 	memset( &fl, 0, sizeof( fl ) );
-	fl.neverDormant	= true;			// most entities never go dormant
+	fl.neverDormant	= false;			// most entities never go dormant
 
 	memset( &renderEntity, 0, sizeof( renderEntity ) );
 	modelDefHandle	= -1;

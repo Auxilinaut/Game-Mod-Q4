@@ -292,6 +292,8 @@ public:
 	int						godmodeDamage;
 	bool					undying;
 
+	bool eating = false;
+
 	bool					spawnAnglesSet;		// on first usercmd, we must set deltaAngles
 	idAngles				spawnAngles;
 	idAngles				viewAngles;			// player view angles
