@@ -1,6 +1,6 @@
 ### Project Pizza
-## Quake 4 game mod by Justin Johnson
-# For IT266 @ NJIT, Professor Kehoe
+#### Quake 4 game mod by Justin Johnson
+##### For IT266 @ NJIT, Professor Kehoe
 
 To build, open "q4sdk.sln" and build as x86 for release. The DLL (Gamex86.dll) will be put up a folder in "Win32".
 
