@@ -1162,10 +1162,10 @@ void idAI::Think( void ) {
 			if (enemyAct && enemyAct->IsInVehicle()) {
 				SetEnemy(enemyAct->GetVehicleController().GetVehicle());	// always get angry at the enemy's vehicle first, not the enemy himself
 			} else {
-				bool enemyDead = (enemyEnt->fl.takedamage && enemyEnt->health <= 0);
+				/*bool enemyDead = (enemyEnt->fl.takedamage && enemyEnt->health <= 0);
 				if ( enemyDead || enemyEnt->fl.notarget || enemyEnt->IsHidden() || (enemyAct && enemyAct->team == team)) {
 					ClearEnemy ( enemyDead );
-				}
+				}*/
 			}
 		}
 

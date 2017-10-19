@@ -1047,6 +1047,15 @@ bool idEntity::CheckDormant( void ) {
 		dormantStart = 0;
 		fl.hasAwakened = true;
 	}		
+
+	//go dormant on <0 HP
+	if (health < 0)
+	{
+		fl.hasAwakened = false;
+		fl.isDormant = true;
+		dormant = true;
+		return dormant;
+	}
 	
 	if ( dormant && !fl.isDormant ) {
 		fl.isDormant = true;
@@ -1055,6 +1064,7 @@ bool idEntity::CheckDormant( void ) {
 		fl.isDormant = false;
 		DormantEnd();
 	}
+	
 
 	return dormant;
 }
@@ -3657,6 +3667,7 @@ void idEntity::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 
 	// inform the attacker that they hit someone
 	attacker->DamageFeedback( this, inflictor, damage );
+
 	if ( damage ) {
 		// do the damage
 		//jshepard: this is kinda important, no?
@@ -3667,7 +3678,15 @@ void idEntity::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 				health = -999;
 			}
 
-			Killed( inflictor, attacker, damage, dir, location );
+			//go dormant instead of dying
+			if (fl.hasAwakened || !fl.isDormant) {
+				dormantStart = gameLocal.GetTime();
+				fl.isDormant = true;
+				fl.hasAwakened = false;
+				DormantBegin();
+			}
+			
+			//Killed( inflictor, attacker, damage, dir, location );
 		} else {
 			Pain( inflictor, attacker, damage, dir, location );
 		}

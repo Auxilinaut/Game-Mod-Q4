@@ -44,6 +44,8 @@ idCVar net_showPredictionError( "net_showPredictionError", "-1", CVAR_INTEGER | 
 ===============================================================================
 */
 
+bool jumpedOnce;
+
 #ifdef _XENON
 bool g_ObjectiveSystemOpen = false;
 #endif
@@ -7604,7 +7606,7 @@ void idPlayer::BobCycle( const idVec3 &pushVelocity ) {
 	//this mod lets the player eat pizza while crouching
 	if (physicsObj.IsCrouching()) {
 		if (!eating) {
-			health += 10;
+			health += 1;
 			if (health > 100) health = 100;
 			eating = true;
 		}
@@ -9078,12 +9080,22 @@ void idPlayer::Move( void ) {
  		}
 	}
 
-	if ( pfl.jump ) {
+	if (jumpedOnce && pfl.jump)
+	{
+		loggedAccel_t	*acc = &loggedAccel[currentLoggedAccel&(NUM_LOGGED_ACCELS - 1)];
+		currentLoggedAccel++;
+		acc->time = gameLocal.time;
+		acc->dir[2] = 200;
+		acc->dir[0] = acc->dir[1] = 0;
+		jumpedOnce = false;
+	} else if ( pfl.jump ) {
 		loggedAccel_t	*acc = &loggedAccel[currentLoggedAccel&(NUM_LOGGED_ACCELS-1)];
 		currentLoggedAccel++;
 		acc->time = gameLocal.time;
 		acc->dir[2] = 200;
 		acc->dir[0] = acc->dir[1] = 0;
+		jumpedOnce = true;
+		pfl.onGround = true;
 	}
 
 	if ( pfl.onLadder ) {
